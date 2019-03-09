@@ -1,5 +1,5 @@
 /*
-  堆排序：建堆，调整堆，存储结构为顺序数组，逻辑结构可看作完全二叉树
+  堆排序：建堆，调整堆，存储数据结构为顺序数组，逻辑数据结构可看作完全二叉树
   时间复杂度O(nlgn)
   空间复杂度O(1)
 */
@@ -13,6 +13,7 @@ void heapSort(vector<int>& array) {
     }
 }
 
+// 构建堆：从最后一个非叶子节点开始调整
 void buildHeap(vector<int>& array) {
     int len = array.size();
     for (int k = len/2 - 1; k >= 0; --k) {
@@ -20,8 +21,11 @@ void buildHeap(vector<int>& array) {
     }
 }
 
-// param: @end 数组最后的有效下标
-// 与较大值的子节点交换
+/*  
+    desc: 调整堆，从上往下逐级调整，与较大值的子节点交换
+    param: @start 数组调整的首个下标
+           @end 数组最后的有效下标
+ */
 void adjustHeap(vector<int>& array, int start, int end) {
     while (true) {
         int child = start * 2 + 1;  
