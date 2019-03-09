@@ -1,6 +1,6 @@
 /*
 模式字符串匹配问题，kmp减少重复比较的次数
-KMP模式匹配详解可参考 https://www.cnblogs.com/zhangtianq/p/5839909.html 
+KMP模式匹配详解可参考 <https://www.cnblogs.com/zhangtianq/p/5839909.html> 
 */
 // pattern为空，返回0
 int strstr(string raw, string pattern) {
