@@ -1,7 +1,8 @@
-# 快速排序
+/* 快速排序
 有三种实现方法：左右指针填充法，左右指针交换法，前后指针交换法
 平均时间复杂度 O(nlgn)，最坏O(n^2)【数组顺序时】
 空间复杂度O(lgn),每个递归需要返回一个值
+*/
 
 void quickSort(vector<int>& array){
     quickSort(array, 0, array.size() - 1);
@@ -35,8 +36,7 @@ int patition(vector<int>& array, int low, int high){
     }
     array[start] = array[low];
     array[low] = pivot;   
-    return low;    
-    
+    return low;        
         
     // 前后指针交换法
     int slow = low, fast = low + 1;
@@ -49,5 +49,4 @@ int patition(vector<int>& array, int low, int high){
     array[low] = array[slow];
     array[slow] = pivot;   
     return slow;   
-    
 }
