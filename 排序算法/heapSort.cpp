@@ -17,7 +17,7 @@ void heapSort(vector<int>& array) {
 void buildHeap(vector<int>& array) {
     int len = array.size();
     for (int k = len/2 - 1; k >= 0; --k) {
-        adjust(array, k, len - 1);
+        adjustHeap(array, k, len - 1);
     }
 }
 
@@ -33,7 +33,7 @@ void adjustHeap(vector<int>& array, int start, int end) {
         if (child + 1 <= end && array[child+1] > array[child]) {
             ++child;
         } 
-        if (array[child] > array[start]) {
+        if (child <= end && array[child] > array[start]) {
             swap(array[child], array[start]);
             start = child;
         } else  break;
